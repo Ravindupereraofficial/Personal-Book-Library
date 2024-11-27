@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="background-color: rgb(247, 241, 233);">
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+           <center> <a class="navbar-brand">Personal Book Library</a></center>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Books Read Count and Calendar -->
+
+        <div class="d-flex justify-content-between mb-4">
+            <div class="card" style="width: 30%;">
+                <div class="card-body">
+                    <center>
+                        <h5 class="card-title" style="margin-top: 90px; font-size: xx-large;">Books Read</h5>
+                        <p id="booksReadCount" class="display-4">0</p>
+                        <button class="btn btn-primary" onclick="addingBooks()">Add Book</button>
+                    </center>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="card mb-4" style="height: auto; width: 350px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: xx-large;">Book Ratings</h5> <br>
+                    <button class="btn btn-primary" onclick="addRating()">Add Rating</button>
+                    <div id="bookRatings"></div>
+                    
+<br>
+                    <button type="button" class="bg-info" id="finalRating"></button>
+
+                    <div class="modal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Rated Books</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card" style="width: 30%;">
+                <div class="card-body">
+                    <div class="month">
+                        <ul>
+                            <li class="prev">&#10094;</li>
+                            <li class="next">&#10095;</li>
+                            <li>November<br><span style="font-size:18px">2024</span></li>
+                        </ul>
+                    </div>
+
+                    <ul class="weekdays">
+                        <li>Mo</li>
+                        <li>Tu</li>
+                        <li>We</li>
+                        <li>Th</li>
+                        <li>Fr</li>
+                        <li>Sa</li>
+                        <li>Su</li>
+                    </ul>
+
+                    <ul class="days">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li><span class="active">10</span></li>
+                        <li>11</li>
+                        <!-- etc -->
+                    </ul>
+                </div>
+        
+        
+            </div>
+
+            
+        </div>
+
+
+        <table>
+            <tr>
+                <td style="height: 500px; width: 500px;"> <!-- Genre Distribution Chart -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Genre Distribution</h5>
+                            <canvas id="genreChart"></canvas>
+                        </div>
+                    </div>
+                </td>
+
+
+                <td style="height: 500px; width: 500px; margin-left: 500px;"> <!-- Progress Bars -->
+
+    </div>
+
+    <div class="card" style="
+    margin-left: 0‒;
+    left: 128px; width: 700px;">
+        <h5 class="card-header">Goals</h5>
+        <div class="card-body">
+            <h5 class="card-title">Your Reading Goals</h5>
+            <div>
+                <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-success" style="width: 25%">25%</div>
+                </div><br>
+                <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="progress-bar bg-info text-dark" style="width: 50%">50%</div>
+                </div><br>
+                <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 75%">75%</div>
+                </div><br>
+                <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-danger" style="width: 100%">100%</div>
+                </div>
+                <br>
+            </div>
+            <a href="#" class="btn btn-primary">Finish Your Book!!</a>
+        </div>
+    </div>
+
+
+    </td>
+
+    </tr>
+<tr>
+    <td>
+        <div class="container mt-4" style="width: 500px;">
+            <!-- Books Read Count and Calendar -->
+        
+            <div class="d-flex justify-content-between mb-4">
+                <div class="card">
+                    <div class="card-body" style="
+    padding-top: 58px;
+    padding-right: 13px;
+    padding-bottom: 58px;
+    padding-left: 113px;
+">
+                        <center>
+                            <h5 class="card-title" style="margin-top: 90px; font-size: xx-large;">Curently Reading page</h5>
+                            <p id="pagesCount" class="display-4">0</p>
+                            <button class="btn btn-primary" onclick="addingpages()">Your page Number</button>
+                        </center>
+                    </div>
+                        
+    </td>
+</tr>
+    </table>
+
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
